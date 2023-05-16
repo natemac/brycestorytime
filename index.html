@@ -1,0 +1,61 @@
+<html>
+  <head>
+  <style>
+      body {
+        background-color: white;
+        margin: 0 auto;
+        display: -ms-flexbox;
+        display: -webkit-flex;  
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+      }
+      #bp-web-widget-container {
+        max-height: 60%;
+        width: 480px;
+        margin: auto;
+        flex-grow: 1;
+      }
+      #bp-web-widget-container div {
+        height: 100%;
+      }
+      .webchatIframe {
+        position: relative !important;
+      }
+      @media only screen and (orientation: portrait),
+        only screen and (orientation: landscape) and (max-width: 900px) {
+        #bp-web-widget-container {
+          width: 90%;
+          height: 80%;
+          max-height: 80%;
+        }
+      }
+    </style>
+    <title>Chatbot</title>
+  </head>
+  <body>
+
+  <script src="https://cdn.botpress.cloud/webchat/v0/inject.js"></script>
+<script>
+  window.botpressWebChat.init({
+      "botId": "94a15e64-ef72-49a4-acbb-3f459c488bf1",
+      "hostUrl": "https://cdn.botpress.cloud/webchat/v0",
+      "messagingUrl": "https://messaging.botpress.cloud",
+      "clientId": "94a15e64-ef72-49a4-acbb-3f459c488bf1",
+      "hideWidget": true,
+      "disableAnimations": true,
+      "closeOnEscape": false,
+      "showConversationsButton": false,
+      "enableTranscriptDownload": false,
+      "showPoweredBy": false,
+      "stylesheet": "https://cdn.botpress.cloud/webchat/v0/themes/shareable.css",
+      "className": "webchatIframe",
+      "containerWidth": "100%25",
+      "layoutWidth": "100%25",
+      "showCloseButton": false
+  });
+window.botpressWebChat.onEvent(function () { window.botpressWebChat.sendEvent({ type: 'show' }) }, ['LIFECYCLE.LOADED']);
+</script>
+
+  </body>
+</html>
